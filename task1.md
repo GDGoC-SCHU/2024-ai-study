@@ -46,6 +46,7 @@ plt.xlabel("GDP per capita (USD)")
 plt.ylabel("Life satisfaction")
 plt.show()
 ```
+<img width="574" alt="스크린샷 2024-11-18 오후 9 11 31" src="https://github.com/user-attachments/assets/b78c0d0d-3fbb-4f40-97cb-a1d66c3ba91a">
 
 ## 3. 선형 회귀 모델
 
@@ -74,7 +75,7 @@ print(f"선형 회귀 예측 결과: {prediction[0, 0]:.2f}")
 ```
 ### 출력 예시
 ```
-선형 회귀 예측 결과: 6.28
+선형 회귀 예측 결과: 5.88
 ```
 
 ## 4. k-최근접 이웃 회귀
@@ -105,7 +106,7 @@ print(f"k-최근접 이웃 예측 결과: {prediction_knn[0, 0]:.2f}")
 ```
 ### 출력 예시
 ```
-k-최근접 이웃 예측 결과: 6.33
+k-최근접 이웃 예측 결과: 6.00
 ```
 -- 
 

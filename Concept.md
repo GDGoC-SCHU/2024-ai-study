@@ -21,8 +21,9 @@ Logistic Regression, Decision Tree, SVM, Random Forest
 
 Logistic Regression
 분류 알고리즘입니다.
+입력 데이터를 분석하여 특정 클래스에 속할 확률을 예측합니다.
 
-정확도(Accuracy)
+### 정확도(Accuracy)
 모델이 예측한 값 중에서 실제 레이블과 일치하는 예측의 비율입니다.
 
 

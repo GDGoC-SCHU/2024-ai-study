@@ -79,7 +79,7 @@ from sklearn.neighbors import KNeighborsRegressor
 X = df[["GDP per capita (USD)"]].values
 y = df[["Life satisfaction"]].values
 
-# k-최근접 이웃 회귀 모델 생성
+# k-최근접 이웃 모델 생성
 model = KNeighborsRegressor(n_neighbors=3)
 model.fit(X, y)
 
@@ -92,7 +92,11 @@ print(f"k-최근접 이웃 예측 결과: {prediction[0, 0]:.2f}")
 ### 출력
 
 ```
-선형 회귀 예측 결과: 6.00
+k-최근접 이웃 예측 결과: 6.00
 ```
 
 ## 결과
+
+선형 회귀의 경우 데이터들의 값을 가지고 직선 함수를 만들어 다른 데이터들을 판단하기에 수치적 데이터를 판단하는데 사용하면 좋을 것으로 생각됨.
+
+k-최근접 이웃 모델의 경우 근처의 군집을 찾아 데이터를 판단하기에 분류 작업을 진행하는데 탁월해 보임

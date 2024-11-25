@@ -25,7 +25,7 @@ plt.show()
 
 ### 출력
 
-![GDP와_삶의_만족도_관계](./GDP와 삶의 만족도 관계.png)
+![GDP와_삶의_만족도_관계](https://github.com/GDGoC-SCHU/2024-ai-study/blob/week1-junho/week1-junho/GDP%EC%99%80%20%EC%82%B6%EC%9D%98%20%EB%A7%8C%EC%A1%B1%EB%8F%84%20%EA%B4%80%EA%B3%84.png?raw=true)
 
 ## 2. 모델 학습
 

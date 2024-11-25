@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
 '''
 GDGoC SCHU AI 스터디 1주차
-과제 2 선형 회귀와 k-최근접 이웃(k-NN)을 사용한 삶의 만족도 예측
-
-1. 제공 데이터를 활용한 GDP, 삶의 만족도 생성
-2. 데이터프레임 변환
-3. 시각화
-4. 선형 회귀 정의 및 학습
-5. k-최근접 이웃 정의 및 학습
-6. 키프로스 1인당 GDP를 입력하여 두 모델의 예측 출력
+과제 2 Iris 데이터셋을 이용한 Logistic Regression 학습 수행 및 정확도 평가
 '''
 from sklearn import datasets
 from sklearn.model_selection import train_test_split

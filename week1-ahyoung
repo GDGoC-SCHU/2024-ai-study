@@ -1,0 +1,79 @@
+[1장]한눈에 보는 머신러닝
+1. 머신러닝 개요
+ 1) 머신러닝: 데이터를 사용해 패턴을 학습하고 새로운 데이터 결과 예측
+
+2. 데이터 준비
+ 1) 데이터 설명: 1인당 GDP(독립변수)와 삶의 만족도(종속변수)
+ 2) 데이터 시각화
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    (1) 데이터 로드
+    data = {"GDP per capita (USD)": [30000, 40000, 50000, 60000],
+           "Life satisfaction": [5.5, 6.0, 6.5, 7.0]}
+    df = pd.DataFrame(data)
+    (2) 데이터 시각화
+    df.plot(kind="scatter", x="GDP per capita (USD)", y="Life satisfaction")
+    plt.title("GDP와 삶의 만족도 관계")
+    plt.xlabel("GDP per capita (USD)")
+    plt.ylabel("Life satisfaction")
+    plt.show()
+
+3. 선형회귀모델
+ 1) 선형회귀: 독립변수와 종속변수 간의 직선관계를 모델링
+ 2) 코드
+    from sklearn.linear_model import LinearRegression
+    (1) 독립 변수(X)와 종속 변수(y)
+    X = df[["GDP per capita (USD)"]].values
+    y = df[["Life satisfaction"]].values
+    (2) 선형 회귀 모델 생성 및 학습
+    model = LinearRegression()
+    model.fit(X, y)
+    (3) 예측
+    X_new = [[37655]]  # 키프로스의 1인당 GDP
+    prediction = model.predict(X_new)
+    print(f"선형 회귀 예측 결과: {prediction[0, 0]:.2f}")
+
+4. k-최근접 이웃 회귀
+ 1) k-최근접 이웃 회귀(k-NN): 새로운 데이터 포인트와 가장 가까운 k개의 데이터 사용해 예측
+ 2) 원리
+    (1) 새로운 데이터와 기존 데이터 사이 거리 계산
+    (2) 가장 가까운 k개 데이터 선택
+    (3) 선택된 데이터 평균 계산해 예측값으로 사용
+ 3) k-NN 특징
+    (1) 장점: 데이터 분포 잘 반영하며 복잡한 패턴 다룰 수 있음
+    (2) 단점: 데이터 양이 많을수록 계산비용 증가하며 최적의 k값 찾는 것이 중요
+ 4) k-NN 회귀코드
+    from sklearn.neighbors import KNeighborsRegressor
+    (1) k-최근접 이웃 회귀 모델 생성
+     model = KNeighborsRegressor(n_neighbors=3)
+     model.fit(X, y)
+    (2) 예측
+    prediction_knn = model.predict(X_new)
+    print(f"k-최근접 이웃 예측 결과: {prediction_knn[0, 0]:.2f}")
+5. 의료분야의 적용과 느낀점
+ 1) 의료 분야에서의 인공 지능(IBM)
+    (1) 머신러닝모델을 사용해 의료데이터를 처리하고 의료전문가에게 인사이트를 제공해 의료서비스 질 향상
+    (2) 활용: 현재 임상 의사 결정 지원 및 영상 분석
+        - 임상 의사 결정 지원: 의료서비스 제공자가 환자정보나 연구에 빠르게 접근 보조
+          -> 치료, 약물, 정신건강 및 기타 환자 요구 사항 결정 
+        - 의료영상: CT스캔, 엑스레이, MRI 및 기타 이미지 분석
+          -> 방사선 전문의가 놓칠 수 있는 병변이나 기타 소견 찾는 데 사용
+        - 예: COVId-19 환자 선별 AI 기반 도구 
+2) 김경 외 2인. 선형회귀분석을 이용한 생체신호 데이터 기반의 건강관리
+   (1) 목적: 스마트 기기로부터 측정된 생체정보 기반으로 선혀회귀분석을 통해 비만 지표를 대상으로 건강 예측
+   (2) 방법: 피험자 대상 75일 동안 개인 운동 수행 시 건강정보 파라미터 변화 양상 분석
+       -> 피험자의 개인 운동 정보: 스마트 시계 활용
+       -> 비만 관련 파라미터(체중, 체지방, 근육 정보): 스마트 체중계 활용
+   (3) 결론: 개인 운동 정보와 체중 관련 파라미터 상관관계분석을 통해 상관성 확인하고 선형회귀분석을 분석
+       -> 체지방: 감소하는 경향
+       -> 근육: 증가하는 경향
+       -> 건강 정보가 사용자에게 시각적 피드백 방법으로 전달되어 개인의 건강관리 참여 독려 기대
+ 3) k-NN 의료 산업에 적용(IBM)
+    (1) 활용: 심장마비와 전립선 암 등의 위험도 예측
+        -> 알고리즘: 가장 가능성이 높은 유전자 발현 계산
+ 4) 느낀점
+    - 추후 보건역학 대학원에 석박통합으로 진학할 예정이 있다.
+    - 추가 자료를 찾아보며 관련 의료 분야의 무한한 가능성을 엿봤다. 
+    - 흥미로운 논문이 많은 것을 보고 더 공부하고 싶어졌다.
+    - 막학기지만 GDGoC SCHU를 통해 AI(Data Analytics)에 관련해 더 많은 지식과 경험을 쌓고 싶다.
+   

@@ -8,15 +8,17 @@ from sklearn.metrics import accuracy_score
 from sklearn.utils import resample
 
 # 데이터 로드 및 준비
+# make_moons는 초승달 모양 클러스터 두 개 형상, 잡음의 크기는 0이면 정확히 반원
+# 문제 조건이 noise=0.4, 샘플 수 10000 이므로 설정
 x, y = make_moons(n_samples=10000, noise=0.4, random_state=42)
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 
 # 결정 트리 하이퍼 파라미터 최적화
 model = DecisionTreeClassifier(random_state=42)
 gscv = GridSearchCV(model, param_grid={
-    'max_depth': range(1, 11),
-    'max_leaf_nodes': range(15, 26),
-    'min_samples_split': range(1, 5)  
+    'max_depth': [None, 4, 5, 6, 7],
+    'max_leaf_nodes': [None, 15, 16, 17, 18],
+    'min_samples_split': range(2, 5)  
 }) # 문제에 따로 범위가 주어져 있지 않아서 임의 부여 
 gscv.fit(x_train, y_train)
 

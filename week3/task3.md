@@ -94,6 +94,9 @@
 2. DBSCAN의 `eps`와 `min_samples`를 적절히 설정하여 군집화 모델을 학습하세요.
 3. 이상치와 군집을 시각화하세요.
 
+**[출력 결과 예시]**
+![image](https://github.com/user-attachments/assets/e91ef583-8413-433e-8858-507cc66851a0)
+
 ---
 
 ### 과제 2: 실제 데이터셋에서 이상치 탐지
@@ -107,4 +110,8 @@
 1. 데이터셋의 특성을 스케일링하세요 (e.g., `StandardScaler`).
 2. DBSCAN의 적절한 `eps`와 `min_samples` 값을 설정하여 이상치를 탐지하세요.
 3. 이상치 비율과 클러스터의 개수를 출력하세요.
+
+**[출력 결과 예시]**
+
+![image](https://github.com/user-attachments/assets/eccfa91b-a845-42be-bdb3-112d59469377)
 

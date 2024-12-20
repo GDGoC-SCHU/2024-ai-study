@@ -10,8 +10,8 @@ iris = load_iris()
 X = iris["data"][:, 3 :] #꽃잎 너비
 y = (iris["target"] == 2).astype(int)
 
-print(f"특성 이름:  {iris["feature_names"][:4]}")
-print(f"타깃 이름: {iris["target_names"][:3]}")
+print(f"특성 이름:  {iris['feature_names'][:4]}")
+print(f"타깃 이름: {iris['target_names'][:3]}")
 print(f"데이터 크기: {X.shape}")
 
 #2.데이터 분할

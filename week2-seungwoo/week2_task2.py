@@ -7,8 +7,8 @@ X = iris.data[["petal length (cm)", "petal width (cm)"]].values
 y = iris.target
 
 
-print(f"특성 이름:  {iris["feature_names"][:2]}")
-print(f"타깃 이름: {iris["target_names"][:2]}")
+print(f"특성 이름:  {iris['feature_names'][:2]}")
+print(f"타깃 이름: {iris['target_names'][:2]}")
 print(f"데이터 크기: {X[:100].shape}")
 
 setosa_or_versicolor = (y == 0) | (y == 1)

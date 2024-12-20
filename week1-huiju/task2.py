@@ -29,4 +29,4 @@ y_pred = model.predict(X_test)
 
 # 예측 결과 기반으로 정확도 계산
 accuracy = accuracy_score(y_test, y_pred)
-print("모델의 정확도:", accuracy)
+print("모델의 정확도: {:.2f}%".format(accuracy * 100))

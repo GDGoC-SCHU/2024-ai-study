@@ -43,14 +43,36 @@
 
 # Task 3
 
+## 비지도 학습
+
+라벨이 없는 데이터를 학습해 데이터의 구조적 패턴을 탐색하는 기법. 데이터의 관계를 파악하거나 정보 재구성에 활용한다. 군집화, 데이터의 차원 축소, 이상치 탐지, 데이터 밀도 추정, 데이터 시가고하 등의 사용 사례가 있다.
+
+### K-means clustering
+
+주어진 데이터를 지점 간 거리 이용해 k개의 군집으로 나누는 방법. 데이터 지점 n개 중 k개 선택하여 각 군집 중심으로 지정하고 나머지는 가까운 군집으로 배정한다.
+
+간단하고 효율적이나 k값을 사전에 지정해야 하는데 데이터마다 k값은 달라질 수 밖에 없고, 데이터 형태가 다양한 경우나 노이즈에 취약하다.
+
+### PCA
+
+고차원의 데이터를 선형 변환하여 저차원으로 축소하는 기법. 데이터의 분산을 최대화하는 방향으로 주성분을 정의한다.
+
+고차원의 데이터를 2D 혹은 3D로 변환하여 시각화 가능하고, 원본 데이터의 변동성을 유지하면서도 특성 간 상관관계를 제거하여 데이터를 보다 독립적인 축으로 변환한다.
+
+### DBSCAN
+
+> Density-Based Spatial Clustering of Applications with Noise
+
+밀도 기반 군집화 알고리즘으로 밀도가 높은 데이터 포인트(지점)을 클러스터로 묶고, 낮은 지역은 이상치로 간주하는 비지도 학습의 일종. 특정한 지점의 인근 지점도 하나의 클러스터라면 병합 가능한 거리인지 확인하여 병합하며 규모를 키워나간다.
+
+데이터의 모양에 구애받지 않고 군집 반경과 군집에 포함되는 최소 샘플 수를 설정할 수 있는 특징을 갖는다.
+
+단, 군집 간 밀도 차이가 크고 매개변수를 정해야 한다.
+
 # 참고자료
 
 - 2024-1 DSC공유대학 모빌리티 AI/SW 과정 '딥러닝'
 - 2024-2 순천향대학교 컴퓨터소프트웨어공학과 '머신러닝'
 - [싸이킷런 데이터 전처리 스케일 조정(스케일러)](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=demian7607&logNo=222009975984)
-- [Google Colab 데이터 업로드 및 활용](https://stackoverflow.com/questions/52761829/how-do-i-upload-my-own-data-for-tensor-flow-using-google-colab)
-- [CSV 파일 가져오는 법(사용하지 않음)](https://ericabae.medium.com/tensorflow-2-0-csv-%ED%8C%8C%EC%9D%BC-%ED%98%95%EC%8B%9D-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EA%B0%80%EC%A0%B8%EC%98%A4%EA%B8%B0-eddaa88d3112)
 - [레이블 없을 때의 `train_test_split`](https://hye0archive.tistory.com/8)
 - [Label Encoding](https://velog.io/@hhhs101/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9D%B8%EC%BD%94%EB%94%A9-Label-Encoding-One-hot-Encodingdummies)
-- [마지막 열 제외하기](https://velog.io/@hhhs101/%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%9D%B8%EC%BD%94%EB%94%A9-Label-Encoding-One-hot-Encodingdummies)
-- [마지막 열만 선택하기](https://stackoverflow.com/questions/40144769/how-to-select-the-last-column-of-dataframe)

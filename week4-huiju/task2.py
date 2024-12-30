@@ -1,4 +1,4 @@
-# 필요한 라이브러리 가져오기import tensorflow as tf
+import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten
 from tensorflow.keras.datasets import mnist
